@@ -1,26 +1,30 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="container mx-auto">
+        <div class="grid grid-cols-4">
+            <div v-for="(logo,index) in data.list" :key="index">
+                <img :src="url(logo)" :alt="logo">
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+const data = require('../data/logos.json')
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+    name: 'App',
+    data() {
+        return {
+            data
+        }
+    },
+    methods: {
+        url(name) {
+            return `https://cdn.jsdelivr.net/gh/jscsscom/project-logos/logos/${name}`
+        }
+    }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
