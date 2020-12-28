@@ -1,9 +1,13 @@
 {
-	"updateTime": 1609164949730,
-	"total": 3,
+	"updateTime": 1609165434143,
+	"total": 7,
 	"list": [
 		"jscss.png",
 		"tailwindcss-logotype.png",
-		"tailwindcss-mark.png"
+		"tailwindcss-mark.png",
+		"nuxt-white.png",
+		"nuxtjs-typo.png",
+		"nuxtjs-typo-white.png",
+		"nuxt.png"
 	]
 }
