@@ -1,7 +1,9 @@
 {
-	"updateTime": 1609162871560,
-	"total": 1,
+	"updateTime": 1609164949730,
+	"total": 3,
 	"list": [
-		"jscss.png"
+		"jscss.png",
+		"tailwindcss-logotype.png",
+		"tailwindcss-mark.png"
 	]
 }
