@@ -9,14 +9,19 @@
         </div>
     </div>
     <div class="container mx-auto mt-5">
-        <div class="bg-gray-200 border-b border-gray-400 flex items-center justify-between h-12 px-4 mb-4">
-            <div>Logos: {{ data.total }}</div>
+        <div class="border-b border-gray-400 flex items-center justify-between h-14 mb-4">
+            <div>
+                <div class="input-group">
+                    <span class="input-prefix">Filter</span>
+                    <input v-model="keyword" type="text" :placeholder="`Search in ${data.total} logos`">
+                </div>
+            </div>
             <div class="flex space-x-3">
-                <span @click="changeBackground(bg)" v-for="(bg,index) in backgrounds" :key="index" :class="bg" class="h-6 w-6 cursor-pointer"></span>
+                <span @click="changeBackground(bg)" v-for="(bg,index) in backgrounds" :key="index" :class="bg" class="h-6 w-6 border border-gray-400 cursor-pointer"></span>
             </div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            <div v-for="(logo,index) in data.list" :key="index" class="border border-gray-200 rounded hover:shadow-lg">
+            <div v-for="(logo,index) in list" :key="index" class="border border-gray-200 rounded hover:shadow-lg">
                 <div :class="background" class="flex items-center justify-center h-40 px-3 py-3">
                     <img :src="url(logo)" :alt="logo" class="max-h-full max-w-full">
                 </div>
@@ -50,6 +55,7 @@ export default {
     data() {
         return {
             data,
+            keyword: '',
             background: 'bg-gray-300',
             backgrounds: [
                 'bg-white',
@@ -61,17 +67,25 @@ export default {
             ],
         }
     },
-    computed:{
-        lastUpdated (){
+    computed: {
+        lastUpdated() {
             let date = new Date(this.data.updateTime)
             return date.toLocaleString()
+        },
+        list() {
+            if (this.keyword) {
+                return this.data.list.filter(item => {
+                    return item.indexOf(this.keyword) > -1
+                })
+            }
+            return this.data.list
         }
     },
     methods: {
         url(name) {
             return `https://cdn.jsdelivr.net/gh/jscsscom/project-logos/logos/${name}`
         },
-        changeBackground(bg){
+        changeBackground(bg) {
             this.background = bg
         },
     },

@@ -3,3 +3,5 @@
 @tailwind utilities;
 
 @import "./components/button.css";
+@import "./components/input.css";
+@import "./components/input-group.css";
