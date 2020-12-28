@@ -5,7 +5,9 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "clear": "gulp clear",
+    "convert": "gulp convert"
   },
   "dependencies": {
     "core-js": "^3.6.5",
@@ -18,7 +20,10 @@
     "@vue/compiler-sfc": "^3.0.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^7.0.0-0"
+    "eslint-plugin-vue": "^7.0.0-0",
+    "gulp": "^4.0.2",
+    "svg-attrs": "^1.1.1",
+    "svg2img": "^0.9.0"
   },
   "eslintConfig": {
     "root": true,
