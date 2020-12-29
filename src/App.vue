@@ -9,11 +9,11 @@
         </div>
     </div>
     <div class="container mx-auto mt-5">
-        <div class="border-b border-gray-400 flex items-center justify-between h-14 mb-4">
+        <div class="border-b border-gray-200 flex items-center justify-between h-14 mb-4">
             <div>
                 <div class="input-group">
                     <span class="input-prefix">Filter</span>
-                    <input v-model="keyword" type="text" :placeholder="`Search in ${data.total} logos`">
+                    <input v-model="keyword" type="text" :placeholder="`Search in ${logoData.total} logos`">
                 </div>
             </div>
             <div class="flex space-x-3">
@@ -23,12 +23,13 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             <div v-for="(logo,index) in list" :key="index" class="border border-gray-200 rounded hover:shadow-lg">
                 <div :class="background" class="flex items-center justify-center h-40 px-3 py-3">
-                    <img :src="url(logo)" :alt="logo" class="max-h-full max-w-full">
+                    <img :src="url('logos','png', logo)" :alt="logo" class="max-h-full max-w-full">
                 </div>
                 <div class="flex items-center justify-between px-4 py-3">
-                    <div>{{ logo.substr(0, logo.length - 4) }}</div>
-                    <div>
-                        <button class="btn btn-sm btn-copy" :data-clipboard-text="url(logo)">Copy URL</button>
+                    <div>{{ logo }}</div>
+                    <div class="space-x-2">
+                        <button v-if="hasSvg(logo)" class="btn btn-sm btn-copy" :data-clipboard-text="url('svgs', 'svg', logo)">svg</button>
+                        <button class="btn btn-sm btn-copy" :data-clipboard-text="url('logos', 'png', logo)">png</button>
                     </div>
                 </div>
             </div>
@@ -39,7 +40,7 @@
         <div class="container mx-auto flex items-center justify-between text-gray-700">
             <div>Project Logos</div>
             <div class="space-x-3">
-                <span>Logos: {{ data.total }}</span>
+                <span>Logos: {{ logoData.total }}</span>
                 <span>Last updated: {{ lastUpdated }}</span>
             </div>
         </div>
@@ -47,14 +48,15 @@
 </template>
 
 <script>
-const data = require('../data/logos.json')
+const logoData = require('../data/logos.json')
+const svgData = require('../data/svgs.json')
 import ClipboardJS from 'clipboard'
 
 export default {
     name: 'App',
     data() {
         return {
-            data,
+            logoData,
             keyword: '',
             background: 'bg-gray-300',
             backgrounds: [
@@ -69,21 +71,24 @@ export default {
     },
     computed: {
         lastUpdated() {
-            let date = new Date(this.data.updateTime)
+            let date = new Date(this.logoData.updateTime)
             return date.toLocaleString()
         },
         list() {
             if (this.keyword) {
-                return this.data.list.filter(item => {
+                return this.logoData.list.filter(item => {
                     return item.indexOf(this.keyword) > -1
                 })
             }
-            return this.data.list
+            return this.logoData.list
         }
     },
     methods: {
-        url(name) {
-            return `https://cdn.jsdelivr.net/gh/jscsscom/project-logos/logos/${name}`
+        url(dir, type, name) {
+            return `https://cdn.jsdelivr.net/gh/jscsscom/project-logos/${dir}/${name}.${type}`
+        },
+        hasSvg(name) {
+            return svgData.list.indexOf(name) > -1
         },
         changeBackground(bg) {
             this.background = bg

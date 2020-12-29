@@ -1,13 +1,13 @@
 {
-	"updateTime": 1609165433350,
+	"updateTime": 1609212179818,
 	"total": 7,
 	"list": [
-		"jscss.svg",
-		"nuxt-white.svg",
-		"nuxt.svg",
-		"nuxtjs-typo-white.svg",
-		"nuxtjs-typo.svg",
-		"tailwindcss-logotype.svg",
-		"tailwindcss-mark.svg"
+		"jscss",
+		"nuxt-white",
+		"nuxt",
+		"nuxtjs-typo-white",
+		"nuxtjs-typo",
+		"tailwindcss-logotype",
+		"tailwindcss-mark"
 	]
 }

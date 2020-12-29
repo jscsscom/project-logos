@@ -15,20 +15,13 @@ const readSvgs = async () => {
     svgs = await fs.readdirSync('./svgs')
 }
 
-const updateSvgData = async () => {
-    svgsData.list = svgs
-    svgsData.total = svgs.length
-    svgsData.updateTime = new Date().getTime()
-    await fs.writeFileSync('data/svgs.json', JSON.stringify(svgsData, null, "\t"))
-}
-
 const convertSvg = async (svg) => {
     await svgAttrs.file('svgs/' + svg, async (err, attrs) => {
         if (err) {
             console.log(err)
         } else {
 
-            let name = svg.substr(0, svg.length - 4) + '.png'
+            let name = svg.substr(0, svg.length - 4)
 
             if (logosData.list.indexOf(name) === -1) {
                 await svg2img(
@@ -38,14 +31,13 @@ const convertSvg = async (svg) => {
                         height: limit,
                         preserveAspectRatio: true,
                     },
-                    async (error, buffer) => {
+                    (error, buffer) => {
                         if (error) {
                             console.log(error)
                         } else {
                             logosData.list.push(name)
                             console.log('converted: ' + name)
-                            await updateLogoData()
-                            await fs.writeFileSync('logos/' + name, buffer)
+                            fs.writeFileSync('logos/' + name + '.png', buffer)
                         }
                     }
                 )
@@ -61,12 +53,6 @@ const convertSvgs = async () => {
     }
 }
 
-const updateLogoData = async () => {
-    logosData.updateTime = new Date().getTime()
-    logosData.total = logosData.list.length
-    await fs.writeFileSync('data/logos.json', JSON.stringify(logosData, null, "\t"))
-}
-
 const resetLogoData = async () => {
     logosData.updateTime = new Date().getTime()
     logosData.total = 0
@@ -74,5 +60,24 @@ const resetLogoData = async () => {
     await fs.writeFileSync('data/logos.json', JSON.stringify(logosData, null, "\t"))
 }
 
-exports.convert = series(readSvgs, parallel(updateSvgData, convertSvgs))
+const updateLogoData = async () => {
+    let logoList = fs.readdirSync('./logos')
+    logoList = logoList.map(item => item.substr(0, item.length - 4))
+    logosData.list = logoList
+    logosData.updateTime = new Date().getTime()
+    logosData.total = logoList.length
+    fs.writeFileSync('data/logos.json', JSON.stringify(logosData, null, "\t"))
+}
+
+const updateSvgData = async () => {
+    let svgList = fs.readdirSync('./svgs')
+    svgList = svgList.map(item => item.substr(0, item.length - 4))
+    svgsData.list = svgList
+    svgsData.updateTime = new Date().getTime()
+    svgsData.total = svgList.length
+    fs.writeFileSync('data/svgs.json', JSON.stringify(svgsData, null, "\t"))
+}
+
+exports.convert = series(readSvgs, convertSvgs)
 exports.clear = resetLogoData
+exports.update = parallel(updateSvgData, updateLogoData)
