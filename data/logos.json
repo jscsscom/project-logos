@@ -1,8 +1,9 @@
 {
-	"updateTime": 1609217265910,
-	"total": 11,
+	"updateTime": 1609217622581,
+	"total": 12,
 	"list": [
 		"bootstrap",
+		"dayjs",
 		"element-plus",
 		"element",
 		"jscss",
