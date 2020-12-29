@@ -21,9 +21,9 @@
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             <div v-for="(logo,index) in list" :key="index" class="border border-gray-200 rounded hover:shadow-lg">
-                <div :class="background" class="flex items-center justify-center h-40 px-3 py-3">
+                <a :class="background" class="flex items-center justify-center h-40 px-3 py-3" :href="url(logo)" target="_blank">
                     <img :src="url(logo)" :alt="logo" class="max-h-full max-w-full">
-                </div>
+                </a>
                 <div class="flex items-center justify-between px-4 py-3">
                     <div>{{ logo }}</div>
                     <div>
@@ -98,7 +98,7 @@ export default {
     },
     methods: {
         url(name) {
-            return `https://cdn.jsdelivr.net/gh/jscsscom/project-logos/logos/${name}`
+            return process.env.VUE_APP_URL_PREFIX + name
         },
         changeBackground(bg) {
             this.background = bg
