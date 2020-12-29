@@ -1,17 +1,26 @@
 {
-	"updateTime": 1609218243608,
-	"total": 11,
+	"updateTime": 1609219307134,
+	"total": 20,
 	"list": [
+		"babel",
 		"bootstrap",
 		"element-plus",
 		"element",
 		"jscss",
+		"lerna",
+		"nextjs",
+		"nodejs",
+		"npm",
 		"nuxt-white",
 		"nuxt",
 		"nuxtjs-typo-white",
 		"nuxtjs-typo",
+		"react",
+		"svelte",
 		"tailwindcss-logotype",
 		"tailwindcss-mark",
-		"webpack"
+		"typescript",
+		"webpack",
+		"yarn"
 	]
 }
