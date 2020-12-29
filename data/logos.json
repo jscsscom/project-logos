@@ -1,8 +1,10 @@
 {
-	"updateTime": 1609216216240,
-	"total": 9,
+	"updateTime": 1609217265910,
+	"total": 11,
 	"list": [
 		"bootstrap",
+		"element-plus",
+		"element",
 		"jscss",
 		"nuxt-white",
 		"nuxt",
