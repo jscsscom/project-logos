@@ -57,7 +57,7 @@ const resetLogoData = async () => {
     logosData.updateTime = new Date().getTime()
     logosData.total = 0
     logosData.list = []
-    await fs.writeFileSync('data/logos.json', JSON.stringify(logosData, null, "\t"))
+    fs.writeFileSync('data/logos.json', JSON.stringify(logosData, null, "\t"))
 }
 
 const updateLogoData = async () => {
