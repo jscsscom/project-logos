@@ -2,7 +2,7 @@
     <div class="bg-gray-100">
         <div class="container mx-auto h-14 flex items-center justify-between">
             <div class="space-x-3">
-                <span class="font-bold text-lg">Project Logos</span>
+                <a class="font-bold text-lg" href="https://jscsscom.github.io/project-logos/">Project Logos</a>
                 <span class="text-gray-700">Collection of awesome front-end project logos</span>
             </div>
             <div><a class="hover:underline" href="https://github.com/jscsscom/project-logos" target="_blank">GitHub</a></div>
@@ -41,7 +41,7 @@
 
     <div class="mt-5 py-3 bg-gray-100">
         <div class="container mx-auto flex items-center justify-between text-gray-600">
-            <div>Powered by <a :href="cdnDir" target="_blank" class="hover:underline">jsdelivr</a></div>
+            <div>CDN powered by <a :href="cdnDir" target="_blank" class="hover:underline">jsdelivr</a></div>
             <div>Project Logos: {{ data.total }}</div>
             <div class="space-x-3">
                 <span>v{{ version }}</span>
