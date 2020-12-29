@@ -1,7 +1,7 @@
 const fs = require('fs')
 
 const index = async () => {
-    let list = fs.readdirSync('./logos')
+    let list = fs.readdirSync('./public/logos')
 
     let data = {
         lastUpdated: new Date().getTime(),
