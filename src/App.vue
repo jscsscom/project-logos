@@ -56,6 +56,7 @@
 const logoData = require('../data/logos.json')
 const svgData = require('../data/svgs.json')
 import ClipboardJS from 'clipboard'
+import dayjs from 'dayjs'
 import {
     ElInput,
     ElButton,
@@ -88,8 +89,7 @@ export default {
     },
     computed: {
         lastUpdated() {
-            let date = new Date(this.logoData.updateTime)
-            return date.toLocaleString()
+            return dayjs(this.logoData.updateTime).format('YYYY-MM-DD HH:mm:ss')
         },
         list() {
             if (this.keyword) {
