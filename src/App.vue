@@ -25,11 +25,12 @@
                     <img :src="url(logo)" :alt="logo" class="max-h-full max-w-full">
                 </a>
                 <div class="flex items-center justify-between px-4 py-3">
-                    <div>{{ logo }}</div>
+                    <el-tag type="primary" size="medium">{{ type(logo) }}</el-tag>
+                    <div>{{ name(logo) }}</div>
                     <div>
                         <el-button-group>
                             <el-tooltip effect="dark" content="Copy url" placement="bottom">
-                                <el-button size="mini" class="btn-copy focus:outline-none px-2" :data-clipboard-text="url(logo)">URL</el-button>
+                                <el-button size="mini" class="btn-copy focus:outline-none px-2" :data-clipboard-text="cdn(logo)">URL</el-button>
                             </el-tooltip>
                         </el-button-group>
                     </div>
@@ -39,10 +40,11 @@
     </div>
 
     <div class="mt-5 py-3 bg-gray-100">
-        <div class="container mx-auto flex items-center justify-between text-gray-700">
-            <div>Project Logos</div>
+        <div class="container mx-auto flex items-center justify-between text-gray-600">
+            <div>Powered by <a :href="cdnDir" target="_blank" class="hover:underline">jsdelivr</a></div>
+            <div>Project Logos: {{ data.total }}</div>
             <div class="space-x-3">
-                <span>Logos: {{ data.total }}</span>
+                <span>v{{ version }}</span>
                 <span>Last updated: {{ lastUpdated }}</span>
             </div>
         </div>
@@ -58,6 +60,7 @@ import {
     ElButton,
     ElButtonGroup,
     ElTooltip,
+    ElTag,
 } from 'element-plus'
 
 export default {
@@ -67,9 +70,11 @@ export default {
         ElButton,
         ElButtonGroup,
         ElTooltip,
+        ElTag,
     },
     data() {
         return {
+            version: process.env.VUE_APP_VERSION,
             data,
             keyword: '',
             background: 'bg-gray-300',
@@ -94,11 +99,27 @@ export default {
                 })
             }
             return this.data.list
-        }
+        },
+        cdnDir() {
+            return process.env.VUE_APP_CDN + '@' + process.env.VUE_APP_VERSION + '/public/logos/'
+        },
     },
     methods: {
         url(name) {
-            return process.env.VUE_APP_URL_PREFIX + name
+            if (process.env.NODE_ENV === 'development') {
+                return '/logos/' + name
+            } else {
+                return this.cdn(name)
+            }
+        },
+        cdn(name) {
+            return this.cdnDir + name
+        },
+        name(logo) {
+            return logo.substring(0, logo.lastIndexOf('.'))
+        },
+        type(logo) {
+            return logo.substring(logo.lastIndexOf('.') + 1, logo.length)
         },
         changeBackground(bg) {
             this.background = bg
