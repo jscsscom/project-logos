@@ -11,10 +11,9 @@
     <div class="container mx-auto mt-5">
         <div class="border-b border-gray-200 flex items-center justify-between h-14 mb-4">
             <div>
-                <div class="input-group">
-                    <span class="input-prefix">Filter</span>
-                    <input v-model="keyword" type="text" :placeholder="`Search in ${logoData.total} logos`">
-                </div>
+                <el-input v-model="keyword" :placeholder="`Search in ${logoData.total} logos`" size="medium" clearable>
+                    <template #prepend>Filter</template>
+                </el-input>
             </div>
             <div class="flex space-x-3">
                 <span @click="changeBackground(bg)" v-for="(bg,index) in backgrounds" :key="index" :class="bg" class="h-6 w-6 border border-gray-400 cursor-pointer"></span>
@@ -27,9 +26,15 @@
                 </div>
                 <div class="flex items-center justify-between px-4 py-3">
                     <div>{{ logo }}</div>
-                    <div class="space-x-2">
-                        <button v-if="hasSvg(logo)" class="btn btn-sm btn-copy" :data-clipboard-text="url('svgs', 'svg', logo)">svg</button>
-                        <button class="btn btn-sm btn-copy" :data-clipboard-text="url('logos', 'png', logo)">png</button>
+                    <div>
+                        <el-button-group>
+                            <el-tooltip v-if="hasSvg(logo)" effect="dark" content="Copy svg url" placement="bottom">
+                                <el-button size="mini" class="btn-copy focus:outline-none px-2" :data-clipboard-text="url('svgs', 'svg', logo)">svg</el-button>
+                            </el-tooltip>
+                            <el-tooltip class="item" effect="dark" content="Copy png url" placement="bottom">
+                                <el-button size="mini" :data-clipboard-text="url('logos', 'png', logo)" class="btn-copy focus:outline-none px-2">png</el-button>
+                            </el-tooltip>
+                        </el-button-group>
                     </div>
                 </div>
             </div>
@@ -51,9 +56,21 @@
 const logoData = require('../data/logos.json')
 const svgData = require('../data/svgs.json')
 import ClipboardJS from 'clipboard'
+import {
+    ElInput,
+    ElButton,
+    ElButtonGroup,
+    ElTooltip,
+} from 'element-plus'
 
 export default {
     name: 'App',
+    components: {
+        ElInput,
+        ElButton,
+        ElButtonGroup,
+        ElTooltip,
+    },
     data() {
         return {
             logoData,

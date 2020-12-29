@@ -1,6 +1,0 @@
-@layer components {
-    .input {
-        @apply border border-gray-200 rounded px-2 py-1.5;
-        @apply focus:outline-none focus:border-gray-300;
-    }
-}
