@@ -1,6 +1,6 @@
 {
-	"updateTime": 1609217622571,
-	"total": 10,
+	"updateTime": 1609218243608,
+	"total": 11,
 	"list": [
 		"bootstrap",
 		"element-plus",
@@ -11,6 +11,7 @@
 		"nuxtjs-typo-white",
 		"nuxtjs-typo",
 		"tailwindcss-logotype",
-		"tailwindcss-mark"
+		"tailwindcss-mark",
+		"webpack"
 	]
 }

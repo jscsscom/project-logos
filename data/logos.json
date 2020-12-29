@@ -1,6 +1,6 @@
 {
-	"updateTime": 1609217622581,
-	"total": 12,
+	"updateTime": 1609218243609,
+	"total": 13,
 	"list": [
 		"bootstrap",
 		"dayjs",
@@ -13,6 +13,7 @@
 		"nuxtjs-typo",
 		"tailwindcss-logotype",
 		"tailwindcss-mark",
-		"vue"
+		"vue",
+		"webpack"
 	]
 }
