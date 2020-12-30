@@ -1,6 +1,6 @@
 {
-	"lastUpdated": 1609244623923,
-	"total": 51,
+	"lastUpdated": 1609312621070,
+	"total": 52,
 	"list": [
 		"angular-nav.png",
 		"angular.svg",
@@ -8,6 +8,7 @@
 		"bootstrap.svg",
 		"browsersync.svg",
 		"chartjs.svg",
+		"codepen.svg",
 		"cssnano-alt.svg",
 		"cssnano.svg",
 		"dayjs.png",
