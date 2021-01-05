@@ -1,6 +1,6 @@
 {
-	"lastUpdated": 1609510927620,
-	"total": 71,
+	"lastUpdated": 1609861424092,
+	"total": 72,
 	"list": [
 		"angular-nav.png",
 		"angular.svg",
@@ -47,6 +47,7 @@
 		"madewithvuejs.png",
 		"mdx.svg",
 		"mocha.svg",
+		"nestjs.svg",
 		"nextjs.svg",
 		"nodejs.svg",
 		"npm.svg",
