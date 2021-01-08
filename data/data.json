@@ -1,6 +1,6 @@
 {
-	"lastUpdated": 1610081658592,
-	"total": 77,
+	"lastUpdated": 1610082435571,
+	"total": 79,
 	"list": [
 		"angular-nav.png",
 		"angular.svg",
@@ -68,6 +68,7 @@
 		"rollup.svg",
 		"sass.svg",
 		"stylus.svg",
+		"sublime.svg",
 		"svelte.svg",
 		"tailwindcss-logotype.svg",
 		"tailwindcss-mark.svg",
@@ -77,6 +78,7 @@
 		"vue.png",
 		"vuepress.png",
 		"webpack.svg",
+		"webstorm.svg",
 		"yarn.svg",
 		"zeptojs.png"
 	]
