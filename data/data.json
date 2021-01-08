@@ -1,6 +1,6 @@
 {
-	"lastUpdated": 1610080588938,
-	"total": 74,
+	"lastUpdated": 1610080891538,
+	"total": 75,
 	"list": [
 		"angular-nav.png",
 		"angular.svg",
@@ -38,6 +38,7 @@
 		"laravel-mix.svg",
 		"lerna.svg",
 		"less.png",
+		"livewire.svg",
 		"lodash.svg",
 		"madewithlaravel-white.png",
 		"madewithlaravel.png",
