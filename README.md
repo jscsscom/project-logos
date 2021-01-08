@@ -53,6 +53,13 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
     ```
     yarn build
     ```
+   
+1. Push to Github.
+
+   ```
+   git push
+   ```
+
 1. Add a new tag named with the version.
 
    ```
@@ -62,6 +69,6 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 1. Deploy the site.
 
    ```
-   git push
    git push --tags
    ```
+   
