@@ -1,6 +1,6 @@
 {
-	"lastUpdated": 1610080891538,
-	"total": 75,
+	"lastUpdated": 1610081658592,
+	"total": 77,
 	"list": [
 		"angular-nav.png",
 		"angular.svg",
@@ -30,6 +30,7 @@
 		"html5.svg",
 		"hugo.svg",
 		"iconfont.svg",
+		"inertia.svg",
 		"jekyll.png",
 		"jest.svg",
 		"jquery.png",
@@ -48,6 +49,7 @@
 		"madewithsvelte.png",
 		"madewithvuejs-white.png",
 		"madewithvuejs.png",
+		"mdn.svg",
 		"mdx.svg",
 		"mocha.svg",
 		"nestjs.svg",
