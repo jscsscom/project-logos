@@ -1,6 +1,6 @@
 {
-	"lastUpdated": 1610082435571,
-	"total": 79,
+	"lastUpdated": 1610083605561,
+	"total": 82,
 	"list": [
 		"angular-nav.png",
 		"angular.svg",
@@ -10,6 +10,7 @@
 		"ant-motion-name.svg",
 		"ant.svg",
 		"antv.svg",
+		"atom.png",
 		"babel.svg",
 		"bootstrap.svg",
 		"browsersync.svg",
@@ -49,6 +50,7 @@
 		"madewithsvelte.png",
 		"madewithvuejs-white.png",
 		"madewithvuejs.png",
+		"materializecss.svg",
 		"mdn.svg",
 		"mdx.svg",
 		"mocha.svg",
@@ -67,6 +69,7 @@
 		"remax.png",
 		"rollup.svg",
 		"sass.svg",
+		"semantic-ui.png",
 		"stylus.svg",
 		"sublime.svg",
 		"svelte.svg",
