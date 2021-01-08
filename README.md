@@ -1,47 +1,67 @@
 # project-logos
 
 ## Project setup
+
 ```
 yarn install
 ```
 
 ### Compiles and hot-reloads for development
+
 ```
 yarn serve
 ```
 
 ### Compiles and minifies for production
+
 ```
 yarn build
 ```
 
 ### Lints and fixes files
+
 ```
 yarn lint
 ```
 
 ### Customize configuration
+
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-## Convert command
+## Add logos
 
-### Convert svg to png
+1. Add logos (png or svg) to the `public/logos` directory.
 
-Convert new svg that not converted
+1. Push to github.
 
-```
-yarn convert
-```
+    ```
+    git push
+    ```
 
-If you want to convert all svg, please run `clear` first:
+## Build the site
 
-```
-yarn clear
-```
+1. Update indexes data.
 
-### Update logo data
+    ```
+    yarn index
+    ```
 
-```
-yarn update
-```
+1. Update the version in `package.json` file.
 
+1. Build the site.
+
+    ```
+    yarn build
+    ```
+1. Add a new tag named with the version.
+
+   ```
+   git tag [version]
+   ```
+
+1. Deploy the site.
+
+   ```
+   git push
+   git push --tags
+   ```
