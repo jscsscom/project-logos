@@ -1,6 +1,6 @@
 {
-	"lastUpdated": 1610083605561,
-	"total": 82,
+	"lastUpdated": 1610083892972,
+	"total": 85,
 	"list": [
 		"angular-nav.png",
 		"angular.svg",
@@ -14,6 +14,7 @@
 		"babel.svg",
 		"bootstrap.svg",
 		"browsersync.svg",
+		"bulma.png",
 		"chartjs.svg",
 		"css3.svg",
 		"cssnano-alt.svg",
@@ -63,6 +64,7 @@
 		"nuxtjs-typo-white.svg",
 		"nuxtjs-typo.svg",
 		"postcss.svg",
+		"purecss.png",
 		"purgecss.png",
 		"react.svg",
 		"redux.svg",
@@ -76,6 +78,7 @@
 		"tailwindcss-logotype.svg",
 		"tailwindcss-mark.svg",
 		"typescript.svg",
+		"uikit.svg",
 		"underscore.png",
 		"vscode.svg",
 		"vue.png",
