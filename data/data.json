@@ -1,6 +1,6 @@
 {
-	"lastUpdated": 1610083971247,
-	"total": 85,
+	"lastUpdated": 1613639732004,
+	"total": 86,
 	"list": [
 		"angular-nav.png",
 		"angular.svg",
@@ -80,6 +80,7 @@
 		"typescript.svg",
 		"uikit.svg",
 		"underscore.png",
+		"vite.svg",
 		"vscode.svg",
 		"vue.png",
 		"vuepress.png",
