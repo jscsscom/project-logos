@@ -28,7 +28,7 @@
     "gulp": "^4.0.2",
     "postcss": "^8.2.1",
     "svg-attrs": "^1.1.1",
-    "svg2img": "^0.9.0"
+    "svg2img": "^0.9.1"
   },
   "eslintConfig": {
     "root": true,

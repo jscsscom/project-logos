@@ -9194,10 +9194,10 @@ svg-tags@^1.0.0:
   resolved "https://registry.npm.taobao.org/svg-tags/download/svg-tags-1.0.0.tgz#58f71cee3bd519b59d4b2a843b6c7de64ac04764"
   integrity sha1-WPcc7jvVGbWdSyqEO2x95krAR2Q=
 
-svg2img@^0.9.0:
-  version "0.9.0"
-  resolved "https://registry.npmjs.org/svg2img/-/svg2img-0.9.0.tgz#b9203036e5242b919509bec28a52f92e547a1ab4"
-  integrity sha512-BRiDwfhEEeuRXrWyQw6uuVbg7GxQHzvlGSvFF7An4BloBNv/WHhW6mLVkffREpDhKxvhqQUAlk/O8RQqduND3g==
+svg2img@^0.9.1:
+  version "0.9.1"
+  resolved "https://registry.npm.taobao.org/svg2img/download/svg2img-0.9.1.tgz#cf5ea4f0c04ca01caee1a2a2a8d565234f9c52fa"
+  integrity sha1-z16k8MBMoByu4aKiqNVlI0+cUvo=
   dependencies:
     atob "^2.0.0"
     btoa "^1.1.2"
